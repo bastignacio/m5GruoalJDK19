@@ -24,6 +24,8 @@
 				</li>
 				<li class="nav-item"><a class="nav-link"
 					href="CrearCapacitacion">Crear Capacitacion</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="Login">Login</a></li> <!-- Nuevo ítem de login -->
 			</ul>
 		</div>
 	</div>
