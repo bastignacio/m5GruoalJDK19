@@ -28,26 +28,21 @@
 			<div class="col-md-6">
 				<form>
 					<div class="mb-3">
-						<label for="nombreCapacitacion" class="form-label">Nombre
-							de la Capacitación</label> <input type="text" class="form-control"
+						<label for="nombreCapacitacion" class="form-label">Nombre de la Capacitación</label> <input type="text" class="form-control"
 							id="nombreCapacitacion" placeholder="Nombre de la capacitación">
 					</div>
 					<div class="mb-3">
-						<label for="fechaCapacitacion" class="form-label">Fecha</label> <input
-							type="date" class="form-control" id="fechaCapacitacion">
+						<label for="fechaCapacitacion" class="form-label">Fecha</label> <input type="date" class="form-control" id="fechaCapacitacion">
 					</div>
 					<div class="mb-3">
-						<label for="duracionCapacitacion" class="form-label">Duración
-							(horas)</label> <input type="number" class="form-control"
+						<label for="duracionCapacitacion" class="form-label">Duración (horas)</label> <input type="number" class="form-control"
 							id="duracionCapacitacion" placeholder="Duración en horas">
 					</div>
 					<div class="mb-3">
-						<label for="descripcionCapacitacion" class="form-label">Descripción</label>
-						<textarea class="form-control" id="descripcionCapacitacion"
+						<label for="descripcionCapacitacion" class="form-label">Descripción</label> 	<textarea class="form-control" id="descripcionCapacitacion"
 							rows="4" placeholder="Descripción de la capacitación"></textarea>
 					</div>
-					<button type="submit" class="btn btn-primary">Crear
-						Capacitación</button>
+					<button type="submit" class="btn btn-primary">Crear Capacitación</button>
 				</form>
 			</div>
 		</div>
