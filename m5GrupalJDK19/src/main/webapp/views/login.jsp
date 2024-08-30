@@ -1,17 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Login</title>
+
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
 	rel="stylesheet">
 </head>
 <body>
 
-	<%@ include file='navbar.jsp'%>
+  <%@ include file='navbar.jsp'%>
 
 	<section class="vh-100 gradient-custom">
 		<div class="container py-5 h-100">
