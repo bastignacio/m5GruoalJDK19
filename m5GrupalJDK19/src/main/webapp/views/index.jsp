@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Prevención de Riesgos PDR</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/views/css/style.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
 
 
 </head>
@@ -33,7 +33,7 @@
 				<a href="#" class="btn btn-primary btn-lg">Conoce más</a>
 			</div>
 			<div class="col-md-6">
-				<img src="${pageContext.request.contextPath}/views/img/logo.jpg" alt="Prevención Segura" class="img-fluid"  style="width: 50%" >
+				<img src="${pageContext.request.contextPath}/img/logo.jpg" alt="Prevención Segura" class="img-fluid"  style="width: 50%" >
 
 			</div>
 		</div>
