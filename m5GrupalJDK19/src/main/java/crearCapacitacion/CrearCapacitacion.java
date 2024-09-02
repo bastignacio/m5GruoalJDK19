@@ -26,6 +26,12 @@ public class CrearCapacitacion extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+    
+	/*
+	 * Este arreglo se define afuera del doGet y adentro de la clase CrearCapacitacion
+	 */
+    
+	private ArrayList<Capacitacion> capacitaciones = new ArrayList<>();
 
 	/*
 	 * Este arreglo se define afuera del doGet y adentro de la clase CrearCapacitacion
@@ -40,9 +46,8 @@ public class CrearCapacitacion extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		getServletContext().getRequestDispatcher("/views/crearCapacitacion.jsp").forward(request,response);
-
-
 	}
+		
 
 
 	/**
@@ -65,9 +70,6 @@ public class CrearCapacitacion extends HttpServlet {
 		/* Se agregan las variables al arrayList Capacitacion */
 
 		capacitaciones.add(nuevaCapacitacion);
-
-
-
 
 	}
 

@@ -70,4 +70,5 @@ public class Login extends HttpServlet {
             getServletContext().getRequestDispatcher("/views/login.jsp").forward(request, response);
         }
     }
+
 }
