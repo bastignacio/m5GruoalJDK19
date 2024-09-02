@@ -19,7 +19,8 @@
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav ms-auto">
 
-				<li class="nav-item"><a class="nav-link active" aria-current="page" href="Index">Inicio</a></li>
+				<li class="nav-item"><a class="nav-link" aria-current="page" href="Index">Inicio</a></li>
+
 				<li class="nav-item"><a class="nav-link" href="Contacto">Contacto</a></li>
 				<li class="nav-item"><a class="nav-link" href="CrearCapacitacion">Crear Capacitacion</a></li>
 				<li class="nav-item"><a class="nav-link" href="ListarCapacitacion">Listar Capacitaciones</a></li>
