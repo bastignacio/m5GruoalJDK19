@@ -1,51 +1,65 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Bienvenido</title>
+<meta charset="UTF-8">
+<title>Prevención de Riesgos PDR</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/views/css/style.css">
+
+
+</head>
+
 <style>
 /* Estilos básicos */
-body {
-	font-family: Arial, sans-serif;
-	background-color: #e2e2e2;
-	text-align: center;
-	padding-top: 100px;
+.card {
+
+color:black;
+background: #bac1b5;
+border-color: black;
+border-radius: 30px;
+
 }
 
-.welcome-container {
-	background-color: #fff;
-	display: inline-block;
-	padding: 40px;
-	border-radius: 8px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.welcome-container h1 {
-	color: #333;
-}
 </style>
-</head>
+
+
+
 <body>
-	<div class="welcome-container">
-		<%
-		String username = "";
-		javax.servlet.http.Cookie[] cookies = request.getCookies();
-		if (cookies != null) {
-			for (javax.servlet.http.Cookie cookie : cookies) {
-				if ("username".equals(cookie.getName())) {
-			username = cookie.getValue();
-			break;
-				}
-			}
-		}
-		%>
-		<h1>
-			¡Bienvenido,
-			<%=username%>!
-		</h1>
-		<p>Has iniciado sesión exitosamente.</p>
-		<a href="${pageContext.request.contextPath}/Logout"
-			class="btn btn-danger mt-4">Cerrar sesión</a>
+
+	<%@ include file='navbar.jsp'%>
+
+
+	<div class="container d-flex justify-content-center align-items-center">
+		<div class="card text-center p-5">
+			<%
+        String username = "";
+        javax.servlet.http.Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (javax.servlet.http.Cookie cookie : cookies) {
+                if ("username".equals(cookie.getName())) {
+                    username = cookie.getValue();
+                    break;
+                }
+            }
+        }
+        %>
+			<h1 class="display-4">
+				¡Bienvenido,
+				<%= username %>!
+			</h1>
+			<p class="lead">Has iniciado sesión exitosamente.</p>
+			<a href="${pageContext.request.contextPath}/Logout"
+				class="btn btn-light mt-2">Cerrar sesión</a>
+		</div>
 	</div>
+
+
+
+
+	<%@ include file='footer.jsp'%>
 </body>
 </html>
