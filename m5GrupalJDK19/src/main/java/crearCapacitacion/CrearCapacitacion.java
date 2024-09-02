@@ -33,11 +33,6 @@ public class CrearCapacitacion extends HttpServlet {
     
 	private ArrayList<Capacitacion> capacitaciones = new ArrayList<>();
 
-	/*
-	 * Este arreglo se define afuera del doGet y adentro de la clase CrearCapacitacion
-	 */
-
-	private ArrayList<Capacitacion> capacitaciones = new ArrayList<>();
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
