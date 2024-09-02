@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,10 +21,16 @@
 
 				<li class="nav-item"><a class="nav-link" aria-current="page" href="Index">Inicio</a></li>
 
+				<% if (session.getAttribute("username") != null) { %>
 				<li class="nav-item"><a class="nav-link" href="Contacto">Contacto</a></li>
-				<li class="nav-item"><a class="nav-link" href="CrearCapacitacion">Crear Capacitacion</a></li>
+				<li class="nav-item"><a class="nav-link" href="CrearCapacitacion">Crear Capacitación</a></li>
 				<li class="nav-item"><a class="nav-link" href="ListarCapacitacion">Listar Capacitaciones</a></li>
-				<li class="nav-item"><a class="nav-link" href="Login">Login</a>
+				<!-- Botón de Logout -->
+				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/logout">Logout</a></li>
+				<% } else { %>
+				<li class="nav-item"><a class="nav-link" href="Login">Login</a></li>
+				<% } %>
+
 
 			</ul>
 		</div>
