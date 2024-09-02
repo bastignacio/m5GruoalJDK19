@@ -11,8 +11,10 @@
 </head>
 <body>
 
+	<!-- Se agrega el navbar creado en otro archivo jsp para poder trabajar de forma modular -->
 	<%@ include file='navbar.jsp'%>
 
+	<!-- Container con estilo m (margin) y (arriba y abajo) de tamaño 5.  -->
 	<div class="container my-5">
 
 		<br>
