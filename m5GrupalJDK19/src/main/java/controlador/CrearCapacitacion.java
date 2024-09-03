@@ -1,4 +1,4 @@
-package servlets;
+package controlador;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,8 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/*Es importante importar el paquete en donde se está almacenando la clase capacitacion (modelo);*/
-import model.Capacitacion;
+import modelo.Capacitacion;
 
 /**
  * Servlet implementation class CrearCapacitacion
