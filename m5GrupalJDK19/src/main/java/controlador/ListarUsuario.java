@@ -1,4 +1,4 @@
-package servlets;
+package controlador;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ListarCapacitacion
+ * Servlet implementation class ListarUsuario
  */
-@WebServlet("/ListarCapacitacion")
-public class ListarCapacitacion extends HttpServlet {
+@WebServlet("/ListarUsuario")
+public class ListarUsuario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ListarCapacitacion() {
+    public ListarUsuario() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -25,18 +25,14 @@ public class ListarCapacitacion extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-
-	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		getServletContext().getRequestDispatcher("/views/listarCapacitacion.jsp").forward(request,response);
+		getServletContext().getRequestDispatcher("/views/listarUsuario.jsp").forward(request,response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-
-	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
