@@ -25,6 +25,8 @@
 				<li class="nav-item"><a class="nav-link" href="Contacto">Contacto</a></li>
 				<li class="nav-item"><a class="nav-link" href="CrearCapacitacion">Crear Capacitación</a></li>
 				<li class="nav-item"><a class="nav-link" href="ListarCapacitacion">Listar Capacitaciones</a></li>
+				<li class="nav-item"><a class="nav-link" href="CrearUsuario">Crear Usuario</a></li>
+				<li class="nav-item"><a class="nav-link" href="ListarUsuario">Listar Usuarios</a></li>
 				<!-- Botón de Logout -->
 				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/logout">Logout</a></li>
 				<% } else { %>
