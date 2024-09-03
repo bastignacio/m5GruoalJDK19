@@ -1,4 +1,4 @@
-<%@page import="modelo.Capacitacion" %>
+<%@page import="modelo.Usuario" %>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -25,30 +25,30 @@
 	<!-- Main content -->
 	
 	<div class="container my-5">
-        <h1 class="display-4">Capacitación Creada</h1>
+        <h1 class="display-4">Usuario creado</h1>
         
         <%
-            Capacitacion nuevaCapacitacion = (Capacitacion) request.getAttribute("nuevaCapacitacion");
-            if (nuevaCapacitacion != null) {
+            Usuario nuevoUsuario = (Usuario) request.getAttribute("nuevoUsuario");
+            if (nuevoUsuario != null) {
         %>
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title"><%= nuevaCapacitacion.getNombreCapacitacion() %></h5>
-                    <p class="card-text"><strong>Fecha:</strong> <%= nuevaCapacitacion.getFechaCapacitacion() %></p>
-                    <p class="card-text"><strong>Duración:</strong> <%= nuevaCapacitacion.getDuracionCapacitacion() %> horas</p>
-                    <p class="card-text"><strong>Descripción:</strong> <%= nuevaCapacitacion.getDescripcionCapacitacion() %></p>
+                     <h5 class="card-title"><%= nuevoUsuario.getNombreUsuario() %></h5>
+                    <p class="card-text"><strong>Identificador</strong> <%= nuevoUsuario.getIdUsuario() %></p>
+                    <p class="card-text"><strong>Nombre:</strong> <%= nuevoUsuario.getNombreUsuario() %></p>
+                    <p class="card-text"><strong>Tipo:</strong> <%= nuevoUsuario.getTipoUsuario() %></p>
                 </div>
             </div>
         <%
             } else {
         %>
             <div class="alert alert-danger" role="alert">
-                No se pudo encontrar la capacitación.
+                No se pudo encontrar el usuario.
             </div>
         <%
             }
         %>
-        <a href="CrearCapacitacion" class="btn btn-primary mt-3">Crear otra capacitación</a>
+        <a href="CrearUsuario" class="btn btn-primary mt-3">Crear otro usuario</a>
     </div>
 		
 	<!-- Footer -->
