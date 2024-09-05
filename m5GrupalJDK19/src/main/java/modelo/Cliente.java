@@ -1,6 +1,5 @@
 package modelo;
 
-
 /*
  * Clase hija de la clase Padre Usuario llamada Cliente que permite obtener los registros sobre un Usuario de tipo Cliente. 
  */

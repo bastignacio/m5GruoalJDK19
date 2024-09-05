@@ -1,11 +1,16 @@
 package controlador;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.DAO.ImplementacionInterfaz;
+import modelo.Capacitacion;
+
 
 /**
  * Servlet implementation class ListarCapacitacion
@@ -26,11 +31,22 @@ public class ListarCapacitacion extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 
-	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		getServletContext().getRequestDispatcher("/views/listarCapacitacion.jsp").forward(request,response);
-	}
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        
+    	ImplementacionInterfaz implementacionInterfaz = new ImplementacionInterfaz();
+        implementacionInterfaz.cargarCapacitacionesPredeterminadas();
+
+        // Obtener la lista de capacitaciones
+        List<Capacitacion> listaCapacitaciones = implementacionInterfaz.getListaCapacitaciones();
+
+        // Pasar la lista como atributo a la JSP
+        request.setAttribute("capacitaciones", listaCapacitaciones);
+
+        // Redirigir a la vista JSP
+        getServletContext().getRequestDispatcher("/views/listarCapacitacion.jsp").forward(request, response);
+    }
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
