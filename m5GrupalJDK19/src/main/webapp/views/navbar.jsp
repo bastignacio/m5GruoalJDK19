@@ -25,7 +25,7 @@
 
 				<% if (session.getAttribute("username") != null) { %>
 				<li class="nav-item"><a class="nav-link" href="Contacto">Contacto</a></li>
-				
+			
 			
 <%--  				
 				Para hacer el navbar con la vista segun los permisos de los usuarios
@@ -83,7 +83,6 @@
 				<li class="nav-item"><a class="nav-link" aria-current="page" href="#">Administrar Chequeos</a></li>
 				<li class="nav-item"><a class="nav-link" aria-current="page" href="#">Responder Checklist</a></li>
 				<li class="nav-item"><a class="nav-link" aria-current="page" href="#">Reportes</a></li>
-
 
 				<!-- Botón de Logout -->
 				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/logout">Logout</a></li>

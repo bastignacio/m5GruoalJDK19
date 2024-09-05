@@ -26,6 +26,7 @@ public class Capacitacion implements Interfaz {
 
 	public void setIdCapacitacion(int idCapacitacion) {
 		this.idCapacitacion = idCapacitacion;
+
 	}
 
 	public String getNombreCapacitacion() {
@@ -65,5 +66,37 @@ public class Capacitacion implements Interfaz {
 	}
 	
 	
+
+	public String getFechaCapacitacion() {
+		return fechaCapacitacion;
+	}
+
+	public void setFechaCapacitacion(String fechaCapacitacion) {
+		this.fechaCapacitacion = fechaCapacitacion;
+	}
+
+	public String getDuracionCapacitacion() {
+		return duracionCapacitacion;
+	}
+
+	public void setDuracionCapacitacion(String duracionCapacitacion) {
+		this.duracionCapacitacion = duracionCapacitacion;
+	}
+
+	public String getDescripcionCapacitacion() {
+		return descripcionCapacitacion;
+	}
+
+	public void setDescripcionCapacitacion(String descripcionCapacitacion) {
+		this.descripcionCapacitacion = descripcionCapacitacion;
+	}
+
+	@Override
+	public String toString() {
+		return "Capacitacion [nombreCapacitacion=" + nombreCapacitacion + ", fechaCapacitacion=" + fechaCapacitacion
+				+ ", duracionCapacitacion=" + duracionCapacitacion + ", descripcionCapacitacion="
+				+ descripcionCapacitacion + "]";
+	}
+
 
 }
