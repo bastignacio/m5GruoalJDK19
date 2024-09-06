@@ -1,7 +1,7 @@
 package controlador;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,62 +9,65 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.DAO.ImplementacionInterfaz;
+import model.DAO.Interfaz;
 import modelo.Capacitacion;
 
-/**
- * Servlet implementation class CrearCapacitacion
- */
 @WebServlet("/CrearCapacitacion")
 public class CrearCapacitacion extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+private Interfaz interfaz;
+	
     public CrearCapacitacion() {
         super();
-        // TODO Auto-generated constructor stub
+        try {
+            // Inicializas la interfaz dentro del constructor con manejo de excepción
+            this.interfaz = new ImplementacionInterfaz();
+        } catch (SQLException e) {
+            e.printStackTrace(); // Maneja la excepción aquí según lo necesites
+            throw new RuntimeException("Error initializing ImplementacionInterfaz", e);
+        }
     }
-    
-	/*
-	 * Este arreglo se define afuera del doGet y adentro de la clase CrearCapacitacion
-	 */
-    
-	private ArrayList<Capacitacion> capacitaciones = new ArrayList<>();
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        try {
+			request.setAttribute("capacitaciones", interfaz.obtenerCapacitaciones());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        request.getRequestDispatcher("/views/crearCapacitacion.jsp").forward(request, response);
+        
+       
 
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		getServletContext().getRequestDispatcher("/views/crearCapacitacion.jsp").forward(request,response);
-	}
-		
+    }
 
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        
+          String nombreCapacitacion = request.getParameter("nombreCapacitacion");
+          String detalleCapacitacion = request.getParameter("detalleCapacitacion");
+        
+          Capacitacion newCapacitacion = new Capacitacion(nombreCapacitacion, detalleCapacitacion);
+          
+          try {
+			interfaz.almacenarCapacitacion(newCapacitacion);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+          
+        request.getRequestDispatcher("/views/crearCapacitacion.jsp").forward(request, response);
+        
+        
+        
+        
+        
+    }
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-
-		/* Almacenar los parámetros ingresados en el formulario de nombreCapacitación */
-
-		String nombreCapacitacion = request.getParameter("nombreCapacitacion");
-		String fechaCapacitacion = request.getParameter("fechaCapacitacion");
-		String duracionCapacitacion = request.getParameter("duracionCapacitacion");
-		String descripcionCapacitacion = request.getParameter("descripcionCapacitacion");
-
-		Capacitacion nuevaCapacitacion = new Capacitacion(nombreCapacitacion, fechaCapacitacion, duracionCapacitacion, descripcionCapacitacion);
-
-		/* Se agregan las variables al arrayList Capacitacion */
-
-		capacitaciones.add(nuevaCapacitacion);
-
-	}
 
 }

@@ -1,61 +1,62 @@
-<%@page import="modelo.Capacitacion" %>
+<%@ page import="java.util.List" %>
+<%@ page import="modelo.Capacitacion" %>
 
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contacto - Prevenci贸n Segura</title>
-
-<!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Capacitaciones</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <body>
-	<!-- Navbar -->
-	
-	<%@ include file='navbar.jsp' %>
 
-	<!-- Main content -->
-	
-	<div class="container my-5">
-        <h1 class="display-4">Capacitaci贸n Creada</h1>
-        
-        <%
-            Capacitacion nuevaCapacitacion = (Capacitacion) request.getAttribute("nuevaCapacitacion");
-            if (nuevaCapacitacion != null) {
-        %>
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title"><%= nuevaCapacitacion.getNombreCapacitacion() %></h5>
-                    <p class="card-text"><strong>Fecha:</strong> <%= nuevaCapacitacion.getFechaCapacitacion() %></p>
-                    <p class="card-text"><strong>Duraci贸n:</strong> <%= nuevaCapacitacion.getDuracionCapacitacion() %> horas</p>
-                    <p class="card-text"><strong>Descripci贸n:</strong> <%= nuevaCapacitacion.getDescripcionCapacitacion() %></p>
+<jsp:include page="navbar.jsp" />  <!-- Incluir el navbar -->
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h1 class="text-center mb-4">Capacitaciones Creadas</h1>
+            
+            <div class="card shadow-sm p-4">
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered">
+                        <thead class="table-dark">
+                            <tr>
+                            	<th scope="col">ID</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Descripci髇</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%
+                            List<Capacitacion> capacitaciones = (List<Capacitacion>) request.getAttribute("capacitaciones");
+                            if (capacitaciones != null && !capacitaciones.isEmpty()) {
+                                for (Capacitacion capacitacion : capacitaciones) {
+                            %>
+                                    <tr>
+                                   		<td><%= capacitacion.getIdCapacitacion() %></td>
+                                        <td><%= capacitacion.getNombreCapacitacion() %></td>
+                                        <td><%= capacitacion.getDetalleCapacitacion() %></td>
+                                    </tr>
+                            <%
+                                }
+                            } else {
+                            %>
+                                <tr>
+                                    <td colspan="3" class="text-center">No hay capacitaciones registradas.</td>
+                                </tr>
+                            <%
+                            }
+                            %>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-        <%
-            } else {
-        %>
-            <div class="alert alert-danger" role="alert">
-                No se pudo encontrar la capacitaci贸n.
-            </div>
-        <%
-            }
-        %>
-        <a href="CrearCapacitacion" class="btn btn-primary mt-3">Crear otra capacitaci贸n</a>
+        </div>
     </div>
-		
-	<!-- Footer -->
-	<%@ include file='footer.jsp'%>
+</div>
 
-	<!-- Bootstrap JS -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-	
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
