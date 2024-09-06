@@ -1,8 +1,6 @@
 package modelo;
 
-import model.DAO.Interfaz;
-
-public class Capacitacion implements Interfaz {
+public class Capacitacion {
 
 	private int idCapacitacion;
 	private String nombreCapacitacion;
@@ -26,7 +24,6 @@ public class Capacitacion implements Interfaz {
 
 	public void setIdCapacitacion(int idCapacitacion) {
 		this.idCapacitacion = idCapacitacion;
-
 	}
 
 	public String getNombreCapacitacion() {
@@ -45,7 +42,6 @@ public class Capacitacion implements Interfaz {
 		this.detalleCapacitacion = detalleCapacitacion;
 	}
 
-
 	@Override
 	public String toString() {
 		return "Capacitacion [idCapacitacion=" + idCapacitacion + ", nombreCapacitacion=" + nombreCapacitacion
@@ -53,50 +49,7 @@ public class Capacitacion implements Interfaz {
 	}
 
 	
-	@Override
-	public void obtenerCapacitaciones() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void registrarCapacitacion(Capacitacion capacitacion) {
-		// TODO Auto-generated method stub
-		
-	}
 	
 	
-
-	public String getFechaCapacitacion() {
-		return fechaCapacitacion;
-	}
-
-	public void setFechaCapacitacion(String fechaCapacitacion) {
-		this.fechaCapacitacion = fechaCapacitacion;
-	}
-
-	public String getDuracionCapacitacion() {
-		return duracionCapacitacion;
-	}
-
-	public void setDuracionCapacitacion(String duracionCapacitacion) {
-		this.duracionCapacitacion = duracionCapacitacion;
-	}
-
-	public String getDescripcionCapacitacion() {
-		return descripcionCapacitacion;
-	}
-
-	public void setDescripcionCapacitacion(String descripcionCapacitacion) {
-		this.descripcionCapacitacion = descripcionCapacitacion;
-	}
-
-	@Override
-	public String toString() {
-		return "Capacitacion [nombreCapacitacion=" + nombreCapacitacion + ", fechaCapacitacion=" + fechaCapacitacion
-				+ ", duracionCapacitacion=" + duracionCapacitacion + ", descripcionCapacitacion="
-				+ descripcionCapacitacion + "]";
-	}
-
 
 }
