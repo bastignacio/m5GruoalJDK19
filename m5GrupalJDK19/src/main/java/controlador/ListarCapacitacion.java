@@ -1,6 +1,7 @@
 package controlador;
 
 import java.io.IOException;
+import java.sql.SQLException;
 //import java.util.List;
 import java.util.List;
 
@@ -9,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import model.DAO.ImplementacionInterfaz;
 import model.DAO.Interfaz;
 import modelo.Capacitacion;
@@ -17,9 +19,21 @@ import modelo.Capacitacion;
 @WebServlet("/ListarCapacitacion")
 public class ListarCapacitacion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-	private Interfaz interfaz = new ImplementacionInterfaz();	
 	
+	private Interfaz interfaz;
+	
+    public ListarCapacitacion() {
+        super();
+        try {
+            // Inicializas la interfaz dentro del constructor con manejo de excepción
+            this.interfaz = new ImplementacionInterfaz();
+        } catch (SQLException e) {
+            e.printStackTrace(); // Maneja la excepción aquí según lo necesites
+            throw new RuntimeException("Error initializing ImplementacionInterfaz", e);
+        }
+    }
+	
+		
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -30,14 +44,16 @@ public class ListarCapacitacion extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	
-    	List<Capacitacion> capacitaciones = interfaz.obtenerCapacitaciones();
-    	
-    	request.setAttribute("capacitaciones", capacitaciones);
-    	
-        request.getRequestDispatcher("/views/listarCapacitacion.jsp").forward(request, response);
-
+        try {
+            List<Capacitacion> capacitaciones = interfaz.obtenerCapacitaciones();
+            request.setAttribute("capacitaciones", capacitaciones);
+            request.getRequestDispatcher("views/listarCapacitacion.jsp").forward(request, response);
+        } catch (SQLException e) {
+            e.printStackTrace();  // Imprime el error para depuración
+            throw new ServletException("Error al obtener capacitaciones", e);  // Lanza una excepción envuelta en ServletException
+        }
     }
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

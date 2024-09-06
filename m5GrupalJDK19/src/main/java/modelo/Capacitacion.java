@@ -17,6 +17,11 @@ public class Capacitacion {
 		this.nombreCapacitacion = nombreCapacitacion;
 		this.detalleCapacitacion = detalleCapacitacion;
 	}
+	
+	public Capacitacion(String nombreCapacitacion, String detalleCapacitacion) {
+		this.nombreCapacitacion = nombreCapacitacion;
+		this.detalleCapacitacion = detalleCapacitacion;
+	}
 
 	public int getIdCapacitacion() {
 		return idCapacitacion;

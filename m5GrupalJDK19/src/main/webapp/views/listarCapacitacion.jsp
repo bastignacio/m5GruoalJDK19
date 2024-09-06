@@ -44,7 +44,7 @@
                             } else {
                             %>
                                 <tr>
-                                    <td colspan="2" class="text-center">No hay capacitaciones registradas.</td>
+                                    <td colspan="3" class="text-center">No hay capacitaciones registradas.</td>
                                 </tr>
                             <%
                             }
