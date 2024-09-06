@@ -27,13 +27,13 @@
             <div class="card shadow-sm p-4">
                 <form action="CrearCapacitacion" method="post">
                     <div class="mb-3">
-                        <label for="nombreCapacitacion" class="form-label">Nombre del Usuario</label>
+                        <label for="nombreCapacitacion" class="form-label">Nombre de la Capacitación</label>
                         <input type="text" class="form-control" id="nombreCapacitacion" name="nombreCapacitacion" required>
                     </div>
                     
                     <div class="mb-3">
-                        <label for="descripcionCapacitacion" class="form-label">Descripción</label>
-                        <input type="text" class="form-control" id="descripcionCapacitacion" name="descripcionCapacitacion" required>
+                        <label for="detalleCapacitacion" class="form-label">Detalle de la Capacitación</label>
+                        <input type="text" class="form-control" id="detalleCapacitacion" name="detalleCapacitacion" required>
                     </div>
                     
                     <div class="text-center">
