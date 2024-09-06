@@ -1,60 +1,51 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Crear Capacitación - Prevención Segura</title>
-<!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
+<%@ page import="java.util.List"%>
+<%@ page import="modelo.Capacitacion"%>
 
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+      
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Nueva Capacitación</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
-	<!-- Navbar -->
-	<%@ include file='navbar.jsp'%>
+<jsp:include page="navbar.jsp" />  <!-- Incluir el navbar -->
 
-	<!-- Main content -->
-	<div class="container my-5">
-		<div class="row">
-			<div class="col-md-6">
-				<h1 class="display-4">Crear Nueva Capacitación</h1>
-				<p class="lead">Utiliza el formulario a continuación para
-					registrar una nueva capacitación para tu equipo. Asegúrate de
-					completar todos los campos requeridos.</p>
-			</div>
-			<div class="col-md-6">
-				<form>
-				
-<!-- 					<div class="mb-3">
-						<label for="idCapacitacionStr" class="form-label">ID Capacitación</label> 
-						<input type="number" min="1" class="form-control" id="idCapacitacionStr" placeholder="ID de la Capacitación" required>
-					</div> -->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h1 class="text-center mb-4">Crear Nueva Capacitación</h1>
+            <p class="lead text-center">
+                Utiliza el formulario a continuación para registrar una capacitación para tu equipo.
+                Asegúrate de completar todos los campos requeridos.
+            </p>
 
-					<div class="mb-3">
-						<label for="nombreCapacitacion" class="form-label">Nombre Capacitación</label> 
-						<input type="text" class="form-control" id="nombreCapacitacion" placeholder="Nombre de la Capacitación" required>
-					</div>
-					
-					<div class="mb-3">
-						<label for="detalleCapacitacion" class="form-label">Descripción de la Capacitación</label> 	
-						<textarea class="form-control" id="detalleCapacitacion"	rows="4" placeholder="Descripción de la capacitación" required></textarea>
-					</div>
-					
-					<button type="submit" class="btn btn-primary">Crear Capacitación</button>
-					
-				</form>
-			</div>
-		</div>
-	</div>
+            <div class="card shadow-sm p-4">
+                <form action="CrearCapacitacion" method="post">
+                    <div class="mb-3">
+                        <label for="nombreCapacitacion" class="form-label">Nombre del Usuario</label>
+                        <input type="text" class="form-control" id="nombreCapacitacion" name="nombreCapacitacion" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="descripcionCapacitacion" class="form-label">Descripción</label>
+                        <input type="text" class="form-control" id="descripcionCapacitacion" name="descripcionCapacitacion" required>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary mt-3">Crear</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
-	<!-- Footer -->
-	<%@ include file='footer.jsp'%>
-
-	<!-- Bootstrap JS -->
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
